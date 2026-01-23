@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- Versioning: Major version matches .NET version -->
+    <Version>10.0.0</Version>
+    
+    <!-- NuGet Package Metadata -->
+    <PackageId>Audabit.Common.Security.AspNet</PackageId>
+    <Authors>John Schaap</Authors>
+    <Company>Audabit Software Solutions B.V.</Company>
+    <Product>Audabit Common Libraries</Product>
+    <Description>Provides API key authentication middleware and security features for ASP.NET Core Web APIs.</Description>
+    <Copyright>Copyright © Audabit Software Solutions B.V. 2026</Copyright>
+    <PackageTags>aspnetcore;security;api-key;authentication;middleware;webapi</PackageTags>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/JohnnySchaap/Audabit.Common.Security.AspNet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/JohnnySchaap/Audabit.Common.Security.AspNet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    
+    <!-- Package Build Settings -->
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Audabit.Common.Validation.AspNet" Version="10.0.*" />
+  </ItemGroup>
+
+</Project>
